@@ -5,7 +5,129 @@
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v8.0": {}
+    ".NETCoreApp,Version=v8.0": {
+      "AForge.Core/1.0.0": {
+        "runtime": {
+          "lib/netcoreapp2.2/AForge.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "AForge.Imaging.Core/1.0.0": {
+        "dependencies": {
+          "AForge.Core": "1.0.0",
+          "AForge.Math.Core": "1.0.0",
+          "System.Drawing.Common": "4.5.1"
+        },
+        "runtime": {
+          "lib/netcoreapp2.2/AForge.Imaging.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "AForge.Math.Core/1.0.0": {
+        "dependencies": {
+          "AForge.Core": "1.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.2/AForge.Math.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/2.0.0": {},
+      "Microsoft.Win32.SystemEvents/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "System.Drawing.Common/4.5.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "Microsoft.Win32.SystemEvents": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "4.0.0.1",
+            "fileVersion": "4.6.26919.2"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.1",
+            "fileVersion": "4.6.26919.2"
+          },
+          "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.1",
+            "fileVersion": "4.6.26919.2"
+          }
+        }
+      }
+    }
   },
-  "libraries": {}
+  "libraries": {
+    "AForge.Core/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aElLt7KbzCU9gHP+h2wvGpso+HKfvtHgkxzcED4FkAn1PQK28o0neKINROiR7wvZNMnAcIa/hZ7XiuXBrd0Nsw==",
+      "path": "aforge.core/1.0.0",
+      "hashPath": "aforge.core.1.0.0.nupkg.sha512"
+    },
+    "AForge.Imaging.Core/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-F38dv/o+aGKgOeHIEHuhrCmMaB/4DYSVEnKr9N4WkyugNNO9iB3BAokKwRzP7Fd7RzpSj3uAd2EeTqAzvfLI7A==",
+      "path": "aforge.imaging.core/1.0.0",
+      "hashPath": "aforge.imaging.core.1.0.0.nupkg.sha512"
+    },
+    "AForge.Math.Core/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eyYpZZohNfyV03O1zIt8TYVSqDHMF5pVYKFHyriJCUOB4wMcY862SVwBi3n2jhR4CaCOS/URT+PMjrvonrlofA==",
+      "path": "aforge.math.core/1.0.0",
+      "hashPath": "aforge.math.core.1.0.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "path": "microsoft.netcore.platforms/2.0.0",
+      "hashPath": "microsoft.netcore.platforms.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LuI1oG+24TUj1ZRQQjM5Ew73BKnZE5NZ/7eAdh1o8ST5dPhUnJvIkiIn2re3MwnkRy6ELRnvEbBxHP8uALKhJw==",
+      "path": "microsoft.win32.systemevents/4.5.0",
+      "hashPath": "microsoft.win32.systemevents.4.5.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GiyeGi/v4xYDz1vCNFwFvhz9k1XddOG7VD3jxRqzRBCbTHji+s3HxxbxtoymuK4OadEpgotI8zQ5+GEEH9sUEQ==",
+      "path": "system.drawing.common/4.5.1",
+      "hashPath": "system.drawing.common.4.5.1.nupkg.sha512"
+    }
+  }
 }

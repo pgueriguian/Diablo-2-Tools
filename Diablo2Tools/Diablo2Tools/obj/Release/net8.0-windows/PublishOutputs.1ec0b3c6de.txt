@@ -1,0 +1,9 @@
+C:\Users\super\source\repos\D2\Diablo 2 Tools\Diablo2Tools\Diablo2Tools\bin\Release\net8.0-windows\publish\LoadingScreenTemplate.png
+C:\Users\super\source\repos\D2\Diablo 2 Tools\Diablo2Tools\Diablo2Tools\bin\Release\net8.0-windows\publish\Diablo2Tools.exe
+C:\Users\super\source\repos\D2\Diablo 2 Tools\Diablo2Tools\Diablo2Tools\bin\Release\net8.0-windows\publish\Diablo2Tools.dll
+C:\Users\super\source\repos\D2\Diablo 2 Tools\Diablo2Tools\Diablo2Tools\bin\Release\net8.0-windows\publish\Diablo2Tools.deps.json
+C:\Users\super\source\repos\D2\Diablo 2 Tools\Diablo2Tools\Diablo2Tools\bin\Release\net8.0-windows\publish\Diablo2Tools.runtimeconfig.json
+C:\Users\super\source\repos\D2\Diablo 2 Tools\Diablo2Tools\Diablo2Tools\bin\Release\net8.0-windows\publish\Diablo2Tools.pdb
+C:\Users\super\source\repos\D2\Diablo 2 Tools\Diablo2Tools\Diablo2Tools\bin\Release\net8.0-windows\publish\AForge.Core.dll
+C:\Users\super\source\repos\D2\Diablo 2 Tools\Diablo2Tools\Diablo2Tools\bin\Release\net8.0-windows\publish\AForge.Imaging.Core.dll
+C:\Users\super\source\repos\D2\Diablo 2 Tools\Diablo2Tools\Diablo2Tools\bin\Release\net8.0-windows\publish\AForge.Math.Core.dll

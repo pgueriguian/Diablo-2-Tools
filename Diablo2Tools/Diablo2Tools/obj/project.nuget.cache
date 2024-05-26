@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "SstFu0vFVKXpuRM2Mvjz2CB69dlfBdyh3wuImeuuGTh9UEDK9efuIUECzUpzb/O3wV3555n+ahlgAvk6xU4kUw==",
+  "dgSpecHash": "SDv3grygw3PoMMIriJmDE5NYhP2yrxxVrsdZmOEvTqbWVDaEvNuN1TQXzE73RFtoX61oB7zWsf2j917s8Er+Ug==",
   "success": true,
   "projectFilePath": "C:\\Users\\super\\source\\repos\\D2\\Diablo 2 Tools\\Diablo2Tools\\Diablo2Tools\\Diablo2Tools.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\super\\.nuget\\packages\\aforge.core\\1.0.0\\aforge.core.1.0.0.nupkg.sha512",
+    "C:\\Users\\super\\.nuget\\packages\\aforge.imaging.core\\1.0.0\\aforge.imaging.core.1.0.0.nupkg.sha512",
+    "C:\\Users\\super\\.nuget\\packages\\aforge.math.core\\1.0.0\\aforge.math.core.1.0.0.nupkg.sha512",
+    "C:\\Users\\super\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\super\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\super\\.nuget\\packages\\system.drawing.common\\4.5.1\\system.drawing.common.4.5.1.nupkg.sha512"
+  ],
   "logs": []
 }

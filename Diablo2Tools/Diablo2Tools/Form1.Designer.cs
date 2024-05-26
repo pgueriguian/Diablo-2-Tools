@@ -28,12 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            runCounter = new NumericUpDown();
+            labelCounter = new Label();
+            resetBtn = new Button();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)runCounter).BeginInit();
+            SuspendLayout();
+            // 
+            // runCounter
+            // 
+            runCounter.Location = new Point(210, 191);
+            runCounter.Name = "runCounter";
+            runCounter.Size = new Size(120, 23);
+            runCounter.TabIndex = 0;
+            // 
+            // labelCounter
+            // 
+            labelCounter.AutoSize = true;
+            labelCounter.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelCounter.ForeColor = Color.Yellow;
+            labelCounter.Location = new Point(53, 32);
+            labelCounter.Name = "labelCounter";
+            labelCounter.Size = new Size(19, 21);
+            labelCounter.TabIndex = 2;
+            labelCounter.Text = "0";
+            // 
+            // resetBtn
+            // 
+            resetBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resetBtn.Location = new Point(29, 56);
+            resetBtn.Name = "resetBtn";
+            resetBtn.Size = new Size(75, 23);
+            resetBtn.TabIndex = 0;
+            resetBtn.TabStop = false;
+            resetBtn.Text = "reset";
+            resetBtn.UseVisualStyleBackColor = true;
+            resetBtn.Click += resetBtn_Click_1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Yellow;
+            label1.Location = new Point(12, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(40, 21);
+            label1.TabIndex = 3;
+            label1.Text = "run:";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(399, 279);
+            Controls.Add(label1);
+            Controls.Add(resetBtn);
+            Controls.Add(labelCounter);
+            Controls.Add(runCounter);
+            Name = "Form1";
+            Text = "Form1";
+            FormClosing += Form1_FormClosing;
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)runCounter).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private NumericUpDown runCounter;
+        private Label labelCounter;
+        private Button resetBtn;
+        private Label label1;
     }
 }

@@ -8,4 +8,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AForge.Core" Version="1.0.0" />
+    <PackageReference Include="AForge.Imaging.Core" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LoadingScreenTemplate.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
