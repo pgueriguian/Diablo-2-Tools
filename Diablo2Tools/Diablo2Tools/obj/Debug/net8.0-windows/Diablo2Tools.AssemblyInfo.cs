@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Diablo2Tools")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf0cbc31489ef191a7c12b143afe950ed33afc2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d7bce75e166c606c1d1e26248bb6c7dcfb38e43")]
 [assembly: System.Reflection.AssemblyProductAttribute("Diablo2Tools")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Diablo2Tools")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

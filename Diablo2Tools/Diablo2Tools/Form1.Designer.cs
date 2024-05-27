@@ -30,7 +30,6 @@
         {
             runCounter = new NumericUpDown();
             labelCounter = new Label();
-            resetBtn = new Button();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)runCounter).BeginInit();
             SuspendLayout();
@@ -38,6 +37,7 @@
             // runCounter
             // 
             runCounter.Location = new Point(210, 191);
+            runCounter.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             runCounter.Name = "runCounter";
             runCounter.Size = new Size(120, 23);
             runCounter.TabIndex = 0;
@@ -52,18 +52,6 @@
             labelCounter.Size = new Size(19, 21);
             labelCounter.TabIndex = 2;
             labelCounter.Text = "0";
-            // 
-            // resetBtn
-            // 
-            resetBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            resetBtn.Location = new Point(29, 56);
-            resetBtn.Name = "resetBtn";
-            resetBtn.Size = new Size(75, 23);
-            resetBtn.TabIndex = 0;
-            resetBtn.TabStop = false;
-            resetBtn.Text = "reset";
-            resetBtn.UseVisualStyleBackColor = true;
-            resetBtn.Click += resetBtn_Click_1;
             // 
             // label1
             // 
@@ -82,7 +70,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(399, 279);
             Controls.Add(label1);
-            Controls.Add(resetBtn);
             Controls.Add(labelCounter);
             Controls.Add(runCounter);
             Name = "Form1";
@@ -98,7 +85,6 @@
 
         private NumericUpDown runCounter;
         private Label labelCounter;
-        private Button resetBtn;
         private Label label1;
     }
 }

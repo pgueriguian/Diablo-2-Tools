@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Media;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using AForge.Imaging;
 using AForge.Imaging.Filters;
@@ -10,27 +11,44 @@ using Timer = System.Windows.Forms.Timer;
 namespace Diablo2Tools
 {
     public partial class Form1 : Form
-    {
+    {    // Import SetWindowLong and GetWindowLong methods from user32.dll
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+        [DllImport("user32.dll")]
+        private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+
+        private const int GWL_EXSTYLE = -20;
+        private const int WS_EX_LAYERED = 0x80000;
+        private const int WS_EX_TRANSPARENT = 0x20;
         private NotifyIcon notifyIcon;
         private ContextMenuStrip contextMenu;
         private ToolStripMenuItem exitMenuItem;
+        private ToolStripMenuItem plusMenuItem;
+        private ToolStripMenuItem minusMenuItem;
+        private ToolStripMenuItem resetMenuItem;
 
         public Form1()
         {
             InitializeComponent();
 
             // Set the form to be topmost and transparent
+            ShowInTaskbar = false;
             TopMost = true;
             FormBorderStyle = FormBorderStyle.None;
             BackColor = Color.Teal; // Set the transparent color
             TransparencyKey = BackColor;
 
-            resetBtn.BackColor = Color.Teal;
-            resetBtn.ForeColor = Color.Yellow;
+
 
             // Set the size and position of the form
             Width = 200;
             Height = 200;
+
+            // Set the window style to make the form click-through
+            int initialStyle = GetWindowLong(this.Handle, GWL_EXSTYLE);
+            SetWindowLong(this.Handle, GWL_EXSTYLE, initialStyle | WS_EX_LAYERED | WS_EX_TRANSPARENT);
+
             // Set the position of the form to the top-left corner of the screen
             StartPosition = FormStartPosition.Manual;
             Location = new Point(0, 0);
@@ -43,21 +61,55 @@ namespace Diablo2Tools
             notifyIcon = new NotifyIcon();
             contextMenu = new ContextMenuStrip();
             exitMenuItem = new ToolStripMenuItem("Exit");
+            plusMenuItem = new ToolStripMenuItem("+1");
+            minusMenuItem = new ToolStripMenuItem("-1");
+            resetMenuItem = new ToolStripMenuItem("Reset");
             notifyIcon.Icon = whiteSquareIcon;
             notifyIcon.Text = "D2 run counter";
             notifyIcon.Visible = true;  // Make the icon visible in the system tray
             // Add context menu items
+            
+            contextMenu.Items.Add(plusMenuItem);
+            contextMenu.Items.Add(minusMenuItem);
+            contextMenu.Items.Add(resetMenuItem);
             contextMenu.Items.Add(exitMenuItem);
             notifyIcon.ContextMenuStrip = contextMenu;
 
             // Handle events
-            notifyIcon.MouseClick += NotifyIcon_MouseClick;
             exitMenuItem.Click += ExitMenuItem_Click;
+            plusMenuItem.Click += PlusMenuItem_Click;
+            minusMenuItem.Click += MinusMenuItem_Click;
+            resetMenuItem.Click += ResetMenuItem_Click;
 
         }
+
+        private void ResetMenuItem_Click(object? sender, EventArgs e)
+        {
+            runCounter.Value = 0;
+            ApplyNumValueToOverlay();
+        }
+
+        private void MinusMenuItem_Click(object? sender, EventArgs e)
+        {
+            if (runCounter.Value > 0)
+            {
+                runCounter.Value--;
+                ApplyNumValueToOverlay();
+            }
+        }
+
+        private void PlusMenuItem_Click(object? sender, EventArgs e)
+        {
+            runCounter.Value++;
+            ApplyNumValueToOverlay();
+        }
+        private void ExitMenuItem_Click(object? sender, EventArgs? e)
+        {
+            Application.Exit();
+        }
+
         private Icon CreateWhiteSquareIcon(int width, int height)
         {
-            // Create a Bitmap and fill it with white color
             Bitmap bitmap = new Bitmap(width, height);
             using (Graphics g = Graphics.FromImage(bitmap))
             {
@@ -122,36 +174,20 @@ namespace Diablo2Tools
             }
             else
             {
-                //SystemSounds.Asterisk.Play();
                 runCounter.Value++;
-                labelCounter.Text = runCounter.Value.ToString();
+                ApplyNumValueToOverlay();
             }
         }
 
-
+        private void ApplyNumValueToOverlay()
+        {
+            labelCounter.Text = runCounter.Value.ToString();
+        }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             // Update the counter text
             labelCounter.Text = $"Counter: {DateTime.Now.Second}";
-        }
-
-        private void resetBtn_Click_1(object sender, EventArgs e)
-        {
-            runCounter.Value = 0;
-            labelCounter.Text = runCounter.Value.ToString();
-        }
-        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                MessageBox.Show("Notify icon clicked!");
-            }
-        }
-
-        private void ExitMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
